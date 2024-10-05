@@ -1,5 +1,6 @@
 // *************** Import library ***************
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 // *************** Import Model ***************
 const UserModel = require('./user.model');
@@ -35,7 +36,9 @@ async function RegisterUser(req, res) {
 
     await UserModel.create(newUser);
 
-    res.status(201).json({ id: newUser.id, first_name: newUser.first_name, last_name: newUser.last_name, email: newUser.email });
+    res.status(201).json({
+      message: 'User Craeted',
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
@@ -44,6 +47,7 @@ async function RegisterUser(req, res) {
 
 async function GetOneUser(req, res) {
   const { user_id } = req?.params;
+  const { userLogin } = req;
 
   const userData = await UserModel.findById(user_id);
 
@@ -54,7 +58,32 @@ async function GetOneUser(req, res) {
   return res.status(200).json({ responseUserData });
 }
 
+async function Login(req, res) {
+  const { email, password } = req?.body;
+
+  const userData = await UserModel.findOne({ email });
+
+  if (!userData) {
+    return res.status(400).json({ message: 'Invalid email or password' });
+  }
+
+  // Compare the provided password with the hashed password in the database
+  const isMatch = await bcrypt.compare(password, userData.password);
+
+  if (!isMatch) {
+    return res.status(400).json({ message: 'Invalid email or password' });
+  }
+
+  // Generate a JWT token for the new user
+  const token = jwt.sign({ id: userData._id, email: userData.email }, process.env.JWT_SECRET, {
+    expiresIn: '1h', // Token expiration time
+  });
+
+  return res.status(400).json({ token });
+}
+
 module.exports = {
   RegisterUser,
   GetOneUser,
+  Login,
 };

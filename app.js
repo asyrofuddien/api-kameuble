@@ -6,6 +6,7 @@ require('dotenv').config();
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded request body
 
 // Connect database
 require('./database');
