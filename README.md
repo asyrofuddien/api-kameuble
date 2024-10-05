@@ -3,7 +3,6 @@
 ![Node.js](https://img.shields.io/badge/Node.js-Latest-green)
 ![Express](https://img.shields.io/badge/Express-4.x-brightgreen)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue)
-![License](https://img.shields.io/github/license/your-username/api-kameuble)
 
 ### Overview
 
