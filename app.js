@@ -18,9 +18,9 @@ const cors = require('cors');
 app.use(cors());
 
 // Import Route
-const userRoutes = require('./users/user.routes');
+const routes = require('./routes');
 
-app.use('/api/users', userRoutes);
+app.use(routes);
 
 app.use((req, res, next) => {
   console.log(`Request received: ${req.method} ${req.url}`);
