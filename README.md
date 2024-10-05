@@ -1,6 +1,6 @@
 # api-kameuble
 
-![Node.js](https://img.shields.io/badge/Node.js-Latest-green)
+![Node.js](https://img.shields.io/badge/Node.js-20.11.0-green)
 ![Express](https://img.shields.io/badge/Express-4.x-brightgreen)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue)
 
