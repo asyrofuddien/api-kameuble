@@ -7,23 +7,6 @@ const UserModel = require('./user.model');
 // *************** Import Utils ***************
 const { RemoveCreatedAndUpdatedAt } = require('../common');
 
-/**
- * Registers a new user.
- *
- * @async
- * @function RegisterUser
- * @param {Object} req - The request object, containing the user data.
- * @param {Object} req.body - The request body containing user registration information.
- * @param {string} req.body.first_name - The first name of the user.
- * @param {string} req.body.last_name - The last name of the user.
- * @param {string} req.body.email - The email of the user.
- * @param {string} req.body.password - The password of the user.
- * @param {Object} res - The response object used to send responses.
- * @returns {Promise<void>} - A promise that resolves when the response is sent.
- *
- * @throws {400} - If any of the required fields are missing or if the user already exists.
- * @throws {500} - If an error occurs during user creation.
- */
 async function RegisterUser(req, res) {
   // Get Data from request
   const userData = req?.body;
@@ -34,7 +17,7 @@ async function RegisterUser(req, res) {
   }
 
   // Check if user already exists
-  const existingUser = await UserModel.findOne({ email: userData?.email }).lean();
+  const existingUser = await UserModel.findOne({ email: userData?.email });
   if (existingUser) {
     return res.status(400).json({ message: 'User already exists' });
   }
@@ -62,9 +45,9 @@ async function RegisterUser(req, res) {
 async function GetOneUser(req, res) {
   const { user_id } = req?.params;
 
-  const userData = await UserModel.findById(user_id).lean();
+  const userData = await UserModel.findById(user_id);
 
-  delete userData.password;
+  if (userData?.password) delete userData.password;
 
   const responseUserData = await RemoveCreatedAndUpdatedAt(userData);
 

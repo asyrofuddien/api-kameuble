@@ -1,7 +1,7 @@
 async function RemoveCreatedAndUpdatedAt(object) {
-  delete object.createdAt;
-  delete object.updatedAt;
-  delete object.__v;
+  if (object?.createdAt) delete object.createdAt;
+  if (object?.updatedAt) delete object.updatedAt;
+  if (object?.__v) delete object.__v;
 
   return object;
 }

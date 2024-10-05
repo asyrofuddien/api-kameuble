@@ -6,6 +6,7 @@ const router = express.Router();
 const { RegisterUser, GetOneUser } = require('./user.controller');
 
 router.post('/register', RegisterUser);
+
 router.post('/:user_id', GetOneUser);
 
 // *************** Export the router
