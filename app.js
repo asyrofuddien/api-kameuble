@@ -4,16 +4,16 @@ const app = express();
 const port = 3000;
 require('dotenv').config();
 
-//import modul route
-const route = require('./routes/routes');
-
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
 // Connect database
 require('./database');
 
-route(app);
+// Import Route
+const userRoutes = require('./users/user.route');
+
+app.use('/api/users', userRoutes);
 
 // Start the server
 app.listen(port, () => {
