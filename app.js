@@ -2,13 +2,18 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-//import modul route
-const route = require('./routes/routes');
+require('dotenv').config();
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
-route(app);
+// Connect database
+require('./database');
+
+// Import Route
+const userRoutes = require('./users/user.route');
+
+app.use('/api/users', userRoutes);
 
 // Start the server
 app.listen(port, () => {
