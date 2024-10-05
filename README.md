@@ -1,2 +1,36 @@
 # api-kameuble
-This repository contains the backend API for the Kameuble marketplace, built using JavaScript and Express.js, with Node.js (latest version) as the runtime environment and PostgreSQL as the database. The API provides various endpoints to manage marketplace operations, including product listings, user accounts, orders, and payments.
+
+![Node.js](https://img.shields.io/badge/Node.js-Latest-green)
+![Express](https://img.shields.io/badge/Express-4.x-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue)
+![License](https://img.shields.io/github/license/your-username/api-kameuble)
+
+### Overview
+
+**api-kameuble** is a backend API built for the Kameuble marketplace. It uses **JavaScript** and **Express.js** for handling requests and managing business logic, with **PostgreSQL** serving as the relational database. This API supports various marketplace features such as product listings, user accounts, orders, and payment processing.
+
+---
+
+## 🚀 Features
+
+- **RESTful API** architecture for easy integration
+- **JWT** (JSON Web Token) authentication for secure access
+- **PostgreSQL** for data storage and management
+- **CRUD** operations for users, products, orders, and payments
+- **Scalable** and optimized for performance
+
+---
+
+## 🛠️ Tech Stack
+
+- **JavaScript** with the latest version of **Node.js**
+- **Express.js** as the web framework
+- **PostgreSQL** as the database
+
+---
+
+## 🔧 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/api-kameuble.git
