@@ -2,11 +2,11 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-20.11.0-green)
 ![Express](https://img.shields.io/badge/Express-4.x-brightgreen)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-5.x-green)
 
 ### Overview
 
-**api-kameuble** is a backend API built for the Kameuble marketplace. It uses **JavaScript** and **Express.js** for handling requests and managing business logic, with **PostgreSQL** serving as the relational database. This API supports various marketplace features such as product listings, user accounts, orders, and payment processing.
+**api-kameuble** is a backend API built for the Kameuble marketplace. It uses **JavaScript** and **Express.js** for handling requests and managing business logic, with **MongoDB** serving as the NoSQL database. This API supports various marketplace features such as product listings, user accounts, orders, and payment processing.
 
 ---
 
@@ -14,7 +14,7 @@
 
 - **RESTful API** architecture for easy integration
 - **JWT** (JSON Web Token) authentication for secure access
-- **PostgreSQL** for data storage and management
+- **MongoDB** for data storage and management
 - **CRUD** operations for users, products, orders, and payments
 - **Scalable** and optimized for performance
 
@@ -24,7 +24,7 @@
 
 - **JavaScript** with the latest version of **Node.js**
 - **Express.js** as the web framework
-- **PostgreSQL** as the database
+- **MongoDB** as the database
 
 ---
 
