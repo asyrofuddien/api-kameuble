@@ -38,7 +38,7 @@
 /**
  * @swagger
  * /api/stores/update-store/{store_id}:
- *   put:
+ *   post:
  *     summary: Update an existing store
  *     tags: [Store]
  *     parameters:
