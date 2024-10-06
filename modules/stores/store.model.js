@@ -14,6 +14,7 @@ const storeSchema = new mongoose.Schema(
         comment: { type: String, default: '' },
       },
     ],
+    status: { type: String, enum: ['active', 'deleted'], default: 'active' },
   },
   { timestamps: true }
 );

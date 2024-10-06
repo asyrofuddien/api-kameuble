@@ -29,7 +29,7 @@ async function UpdateStore(req, res) {
 }
 
 async function GetAllStores(req, res) {
-  const StoreData = await StoreModel.find();
+  const StoreData = await StoreModel.find({ status: 'active' });
   return res.status(200).json({ StoreData });
 }
 

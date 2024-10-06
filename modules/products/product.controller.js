@@ -30,7 +30,7 @@ async function UpdateProduct(req, res) {
 }
 
 async function GetAllProducts(req, res) {
-  const productData = await ProductModel.find();
+  const productData = await ProductModel.find({ status: 'active' });
   return res.status(200).json({ productData });
 }
 

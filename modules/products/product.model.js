@@ -6,6 +6,7 @@ const productSchema = new mongoose.Schema(
     price: { type: Number, default: 0 },
     stock: { type: Number, default: 0 },
     store_id: { type: mongoose.Types.ObjectId, ref: 'store' },
+    status: { type: String, enum: ['active', 'deleted'], default: 'active' },
   },
   { timestamps: true }
 );

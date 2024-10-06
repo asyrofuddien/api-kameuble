@@ -13,6 +13,7 @@ const usersSchema = new mongoose.Schema(
         city: { type: String, default: '' },
       },
     ],
+    status: { type: String, enum: ['active', 'deleted'], default: 'active' },
   },
   { timestamps: true }
 );
