@@ -48,7 +48,6 @@ async function RegisterUser(req, res) {
 
 async function GetOneUser(req, res) {
   const { user_id } = req?.params;
-  const { userLogin } = req;
 
   const userData = await UserModel.findById(user_id);
 
