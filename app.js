@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true })); // Parses URL-encoded request b
 require('./database');
 
 // Connect swagger
-require('./swagger');
+require('./swaggers/swagger');
 
 // Enable CORS for all routes
 const cors = require('cors');

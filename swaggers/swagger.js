@@ -19,7 +19,7 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./users/*.js'], // Point to your route files
+  apis: ['./**/user*.js'],
 };
 
 // Generate Swagger documentation

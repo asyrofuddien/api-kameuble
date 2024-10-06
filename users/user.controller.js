@@ -13,8 +13,8 @@ async function RegisterUser(req, res) {
   const userData = req?.body;
 
   // Check field required
-  if (!userData?.first_name || !userData?.last_name || !userData?.email || !userData?.password) {
-    return res.status(400).json({ message: 'First name, last name, email, and password are required' });
+  if (!userData?.first_name || !userData?.last_name || !userData?.email || !userData?.password || !userData?.user_type) {
+    return res.status(400).json({ message: 'First name, last name, email, user type, and password are required' });
   }
 
   // Check if user already exists
@@ -31,6 +31,7 @@ async function RegisterUser(req, res) {
       first_name: userData.first_name,
       last_name: userData.last_name,
       email: userData.email,
+      user_type: userData.user_type,
       password: hashedPassword, // Store the hashed password
     };
 

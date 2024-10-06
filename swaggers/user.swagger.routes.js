@@ -36,35 +36,71 @@
  * /api/users/register:
  *   post:
  *     summary: Register a new user
+ *     description: Creates a new user account with the provided details.
+ *     tags:
+ *       - Users
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               first_name:
- *                 type: string
- *                 example: John
- *               last_name:
- *                 type: string
- *                 example: Doe
- *               email:
- *                 type: string
- *                 example: john.doe@example.com
- *               password:
- *                 type: string
- *                 example: secretpassword
  *             required:
  *               - first_name
  *               - last_name
  *               - email
  *               - password
+ *               - user_type
+ *             properties:
+ *               first_name:
+ *                 type: string
+ *                 description: User's first name
+ *                 example: John
+ *               last_name:
+ *                 type: string
+ *                 description: User's last name
+ *                 example: Doe
+ *               email:
+ *                 type: string
+ *                 description: User's email
+ *                 example: johndoe@example.com
+ *               password:
+ *                 type: string
+ *                 description: User's password
+ *                 example: MySecurePassword123
+ *               user_type:
+ *                 type: string
+ *                 description: The type of the user (e.g., admin, customer)
+ *                 example: admin
  *     responses:
  *       201:
  *         description: User created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: User Created
  *       400:
- *         description: Bad request
+ *         description: Missing or invalid fields
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: First name, last name, email, user type, and password are required
  *       500:
  *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Internal server error
  */
