@@ -3,6 +3,7 @@
  * /api/users/{user_id}:
  *   get:
  *     summary: Get a user by ID
+ *     tags: [users]
  *     parameters:
  *       - in: path
  *         name: user_id
@@ -37,8 +38,7 @@
  *   post:
  *     summary: Register a new user
  *     description: Creates a new user account with the provided details.
- *     tags:
- *       - Users
+ *     tags: [users]
  *     requestBody:
  *       required: true
  *       content:
@@ -71,7 +71,7 @@
  *               user_type:
  *                 type: string
  *                 description: The type of the user (e.g., admin, customer)
- *                 example: admin
+ *                 example: ID OF USER TYPE
  *     responses:
  *       201:
  *         description: User created successfully

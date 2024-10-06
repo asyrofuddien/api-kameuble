@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 
-const userSwaggerOptions = {
+const swaggerOptions = {
   definition: {
     openapi: '3.0.0', // Specify the OpenAPI version
     info: {
@@ -19,14 +19,14 @@ const userSwaggerOptions = {
       },
     ],
   },
-  apis: ['./**/user*.js'],
+  apis: ['**/*.swagger.routes.js'],
 };
 
 // Generate Swagger documentation
-const userSwaggerSpec = swaggerJsdoc(userSwaggerOptions);
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
 // Serve Swagger UI
-app.use('/users', swaggerUi.serve, swaggerUi.setup(userSwaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Example route
 app.get('/api/v1/products', (req, res) => {
