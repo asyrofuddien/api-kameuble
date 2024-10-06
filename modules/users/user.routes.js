@@ -5,7 +5,7 @@ const router = express.Router();
 // *************** import controller
 const { RegisterUser, GetOneUser, Login } = require('./user.controller');
 
-const { RequireAuth } = require('../middlewares/auth-middlewares');
+const { RequireAuth } = require('../../middlewares/auth-middlewares');
 
 router.post('/register', RegisterUser);
 router.post('/login', Login);

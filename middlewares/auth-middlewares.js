@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 // *************** Import Model ***************
-const UserModel = require('../users/user.model');
+const UserModel = require('../modules/users/user.model');
 
 /**
  * Middleware to require authentication for a resolver.

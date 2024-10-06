@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 
-const swaggerOptions = {
+const userSwaggerOptions = {
   definition: {
     openapi: '3.0.0', // Specify the OpenAPI version
     info: {
@@ -23,7 +23,7 @@ const swaggerOptions = {
 };
 
 // Generate Swagger documentation
-const userSwaggerSpec = swaggerJsdoc(swaggerOptions);
+const userSwaggerSpec = swaggerJsdoc(userSwaggerOptions);
 
 // Serve Swagger UI
 app.use('/users', swaggerUi.serve, swaggerUi.setup(userSwaggerSpec));

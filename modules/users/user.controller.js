@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const UserModel = require('./user.model');
 
 // *************** Import Utils ***************
-const { RemoveCreatedAndUpdatedAt } = require('../common');
+const { RemoveCreatedAndUpdatedAt } = require('../../common');
 
 async function RegisterUser(req, res) {
   // Get Data from request
